@@ -35,4 +35,6 @@ app.get("/api/status", (req, res) => {
   res.json({ status: "Backend online 🚀" });
 });
 
-export default app;
+// ✅ Start the server (this makes it actually run on Render)
+const PORT = process.env.PORT || 10000;
+app.listen(PORT, () => console.log(`🌍 Server running on port ${PORT}`));

@@ -1,0 +1,13 @@
+# Node modules
+node_modules/
+npm-debug.log
+.DS_Store
+
+# Secrets
+*.json
+*.env
+firebase_base64.txt
+
+# System files
+.env.local
+.env.production

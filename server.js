@@ -1,10 +1,18 @@
 // server.js
 import express from "express";
+import cors from "cors";
 import dotenv from "dotenv";
 import admin from "firebase-admin";
 
 dotenv.config();
 const app = express();
+// ✅ Enable CORS for all domains (during testing)
+app.use(cors({
+  origin: "*",  // allow all origins (you can restrict later)
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"]
+}));
+
 app.use(express.json());
 
 // Decode Firebase credentials from BASE64 env variable
